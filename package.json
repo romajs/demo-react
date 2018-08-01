@@ -6,7 +6,8 @@
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "remarkable": "^1.7.1"
   },
   "scripts": {
     "build": "react-scripts build",

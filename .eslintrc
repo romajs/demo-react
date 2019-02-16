@@ -1,0 +1,15 @@
+{
+  "extends": [
+      "standard",
+      "standard-react"
+  ],
+  "env": {
+      "es6": true,
+      "browser": true,
+      "jest": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+      "no-console": "warn"
+  }
+}

@@ -1,21 +1,29 @@
-import './App.css'
-import HelloMessage from './components/HelloMessage'
-import logo from './logo.svg'
 import React, { Component } from 'react'
-import TimerInSeconds from './components/TimerInSeconds'
-import TodoApp from './components/TodoApp'
-import MarkdownEditor from './MarkdownEditor'
+import { Provider } from 'react-redux'
 
-class App extends Component {
+import { HelloMessage } from './components/HelloMessage'
+import { MarkdownEditor } from './components/MarkdownEditor'
+import { TimerInSeconds } from './components/TimerInSeconds'
+import { TodoApp } from './components/TodoApp'
+import configureStore from './store/configureStore'
+
+const store = configureStore()
+
+export class App extends Component {
   render () {
-    return [
-      <HelloMessage key={0} name='world' />,
-      <logo key={1} />,
-      <TimerInSeconds key={3} />,
-      <TodoApp key={4} />,
-      <MarkdownEditor key={5} />
-    ]
+    return (
+      <Provider store={store}>
+        <HelloMessage name='World' />
+        <TimerInSeconds />
+        <TodoApp />
+        <MarkdownEditor />
+      </Provider>
+    )
   }
 }
 
-export default App
+App.propTypes = {
+}
+
+App.defaultProps = {
+}

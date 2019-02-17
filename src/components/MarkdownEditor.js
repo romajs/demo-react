@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Remarkable from 'remarkable'
 
-class MarkdownEditor extends Component {
+export class MarkdownEditor extends Component {
   constructor (props) {
     super(props)
     this.handleChange = this.handleChange.bind(this)
@@ -38,5 +38,3 @@ class MarkdownEditor extends Component {
     )
   }
 }
-
-export default MarkdownEditor

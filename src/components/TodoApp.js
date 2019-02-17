@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-class TodoApp extends Component {
+export class TodoApp extends Component {
   constructor (props) {
     super(props)
     this.state = { items: [], text: '' }
@@ -66,5 +66,3 @@ class TodoList extends Component {
 TodoList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired
 }
-
-export default TodoApp

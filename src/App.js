@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 
-import { HelloMessage } from './components/HelloMessage'
-import { MarkdownEditor } from './components/MarkdownEditor'
-import { TimerInSeconds } from './components/TimerInSeconds'
-import { TodoApp } from './components/TodoApp'
+import { HelloMessage } from './component/HelloMessage'
+import { MarkdownEditor } from './component/MarkdownEditor'
+import { TimerInSeconds } from './component/TimerInSeconds'
+import { TodoApp } from './component/TodoApp'
 import configureStore from './store/configureStore'
 
 const store = configureStore()

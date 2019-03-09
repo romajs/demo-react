@@ -9,5 +9,6 @@
 - [x] redux
 - [x] redux-actions
 - [x] seamless-immutable
+- [x] pre-commit
 - [ ] react-router
 - [ ] axios

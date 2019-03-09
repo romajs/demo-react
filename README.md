@@ -10,5 +10,6 @@
 - [x] redux-actions
 - [x] seamless-immutable
 - [x] pre-commit
+- [x] esw
 - [ ] react-router
 - [ ] axios

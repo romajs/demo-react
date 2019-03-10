@@ -2,7 +2,31 @@
   "name": "demo-react",
   "version": "0.1.0",
   "private": true,
+  "author": "@romajs",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "pre-commit": [
+    "lint",
+    "test:ci"
+  ],
+  "proxy": "http://localhost:3001",
+  "scripts": {
+    "build": "react-scripts build",
+    "eject": "react-scripts eject",
+    "lint:watch": "npm run lint -- --watch",
+    "lint": "esw src --color --fix",
+    "start:app": "react-scripts start",
+    "start:mock": "json-server mock/db.json",
+    "start": "run-p start:app start:mock",
+    "test:ci": "cross-env CI=true npm test",
+    "test": "react-scripts test --env=jsdom"
+  },
   "dependencies": {
+    "axios": "^0.18.0",
     "npm-run-all": "^4.1.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
@@ -15,17 +39,6 @@
     "redux-thunk": "^2.3.0",
     "remarkable": "^1.7.1",
     "seamless-immutable": "^7.1.4"
-  },
-  "scripts": {
-    "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "lint:watch": "npm run lint -- --watch",
-    "lint": "esw src --color --fix",
-    "start:app": "react-scripts start",
-    "start:mock": "json-server mock/db.json",
-    "start": "run-p start:app start:mock",
-    "test:ci": "cross-env CI=true npm test",
-    "test": "react-scripts test --env=jsdom"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
@@ -43,15 +56,5 @@
     "pre-commit": "^1.2.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-mock-store": "^1.5.3"
-  },
-  "pre-commit": [
-    "lint",
-    "test:ci"
-  ],
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

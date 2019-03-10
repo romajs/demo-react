@@ -12,5 +12,5 @@
 - [x] pre-commit
 - [x] esw
 - [x] json-server
+- [x] axios
 - [ ] react-router
-- [ ] axios

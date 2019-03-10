@@ -1,5 +1,5 @@
 import axios from 'axios'
-import configurationService from './configurationService'
+import { configurationService } from './configurationService'
 
 jest.mock('axios')
 

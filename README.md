@@ -13,4 +13,4 @@
 - [x] esw
 - [x] json-server
 - [x] axios
-- [ ] react-router
+- [x] react-router

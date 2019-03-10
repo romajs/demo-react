@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Main } from '../component/Main'
 import loadApplicationActionCreator from '../store/actionCreator/loadApplicationActionCreator'
 
-class _MainContainer extends Component {
+class _Container extends Component {
   componentDidMount () {
     this.props.loadApplication()
   }
@@ -15,11 +14,12 @@ class _MainContainer extends Component {
     if (loading) {
       return <p>loading={loading.toString()}</p>
     }
-    return <Main {...this.props} />
+    return this.props.children
   }
 }
 
-_MainContainer.propTypes = {
+_Container.propTypes = {
+  children: PropTypes.node.isRequired,
   loading: PropTypes.bool.isRequired,
   loadApplication: PropTypes.func.isRequired
 }
@@ -32,4 +32,4 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   loadApplication: loadApplicationActionCreator
 }, dispatch)
 
-export const MainContainer = connect(mapStateToProps, mapDispatchToProps)(_MainContainer)
+export const AppLoaderContainer = connect(mapStateToProps, mapDispatchToProps)(_Container)

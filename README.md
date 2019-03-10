@@ -14,3 +14,5 @@
 - [x] json-server
 - [x] axios
 - [x] react-router
+- [x] react-router/PrivateRoute
+- [ ] auth

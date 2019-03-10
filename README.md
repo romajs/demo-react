@@ -11,5 +11,6 @@
 - [x] seamless-immutable
 - [x] pre-commit
 - [x] esw
+- [x] json-server
 - [ ] react-router
 - [ ] axios

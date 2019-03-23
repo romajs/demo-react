@@ -1,6 +1,6 @@
 import Immutable from 'seamless-immutable'
 import { handleActions } from 'redux-actions'
-import * as actions from '../actions'
+import * as actions from './actions'
 
 const initialState = Immutable({
   loading: false

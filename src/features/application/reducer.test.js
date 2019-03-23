@@ -1,7 +1,7 @@
-import reducer from './applicationReducer'
-import * as actions from '../actions'
+import reducer from './reducer'
+import * as actions from './actions'
 
-describe('applicationReducer', () => {
+describe('reducer', () => {
   describe('when no action', () => {
     it('should match initial state', () => {
       expect(reducer(undefined, {})).toEqual({

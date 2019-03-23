@@ -1,22 +1,22 @@
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
-import { Header } from '../component/Header'
-import { fakeAuth } from '../auth'
+import { Header } from '../misc/Header'
+import { fakeAuth } from '../../auth'
 
-export const PrivatePage = ({ history }) => (
+export const LoginPage = ({ history }) => (
   <React.Fragment>
     <Header />
     <hr />
-    <h1>Private</h1>
+    <h1>LoginPage</h1>
     <p>isAuthenticated={fakeAuth.isAuthenticated.toString()}</p>
     <div>
-      <button onClick={() => fakeAuth.logout(() => history.push('/home'))}>
-        Logout
+      <button onClick={() => fakeAuth.login(() => history.push('/private'))}>
+        Login
       </button>
     </div>
   </React.Fragment>
 )
 
-PrivatePage.propTypes = {
+LoginPage.propTypes = {
   history: ReactRouterPropTypes.history.isRequired
 }

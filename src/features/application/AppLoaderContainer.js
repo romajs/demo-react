@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import loadApplicationActionCreator from '../store/actionCreator/loadApplicationActionCreator'
+import { loadApplication } from './loadApplication'
 
 class _Container extends Component {
   componentDidMount () {
@@ -28,8 +27,8 @@ const mapStateToProps = (state) => ({
   loading: state.application.loading
 })
 
-const mapDispatchToProps = (dispatch) => bindActionCreators({
-  loadApplication: loadApplicationActionCreator
-}, dispatch)
+const mapDispatchToProps = ({
+  loadApplication
+})
 
 export const AppLoaderContainer = connect(mapStateToProps, mapDispatchToProps)(_Container)

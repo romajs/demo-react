@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header } from '../component/Header'
+import { Header } from '../misc/Header'
 
 export const HomePage = (props) => (
   <React.Fragment>

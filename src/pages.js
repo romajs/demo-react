@@ -21,11 +21,12 @@ export const PRIVATE = {
   url: '/private',
   title: 'Private'
 }
+
 export const ROOT = {
   enabled: true,
   showSidebar: true,
   showNavbar: true,
-  title: 'Root',
+  title: 'Home',
   url: '/'
 }
 

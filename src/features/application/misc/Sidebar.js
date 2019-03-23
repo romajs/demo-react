@@ -1,17 +1,15 @@
-// import Divider from '@material-ui/core/Divider'
 import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
+import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import MailIcon from '@material-ui/icons/Mail'
-import pages from '../../../pages'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
+import sidebarList from '../../../sidebarList'
 
 const styles = {
   list: {
@@ -30,26 +28,22 @@ export const _Sidebar = ({ classes, history, open, toggleSidebar }) => {
         onClick={() => toggleSidebar(false)}
       >
         <div className={classes.list}>
-          <List>
-            {pages.map((page, index) => (
-              <ListItem button key={index}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText
-                  primary={page.title}
-                  onClick={() => history.push(page.url)}
-                />
-              </ListItem>
-            ))}
-          </List>
-          {/* <Divider />
-          <List>
-            {['About'].map((text, index) => (
-              <ListItem button key={text}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItem>
-            ))}
-          </List> */}
+          {sidebarList.map((list, listIndex) => (
+            <List>
+              {list.map((listItem, listItemIndex) => (
+                <ListItem button key={`list-item-${listIndex}-${listItemIndex}`}>
+                  <ListItemIcon>
+                    <listItem.icon />
+                  </ListItemIcon>
+                  <ListItemText
+                    primary={listItem.text}
+                    onClick={() => history.push(listItem.url)}
+                  />
+                </ListItem>
+
+              ))}
+            </List>
+          )).reduce((acc, cur) => [acc, <Divider />, cur])}
         </div>
       </div>
     </Drawer>
@@ -62,7 +56,5 @@ _Sidebar.propTypes = {
   open: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
-
-// export const Sidebar = withStyles(styles)(_Sidebar)
 
 export const Sidebar = withRouter(withStyles(styles)(_Sidebar))

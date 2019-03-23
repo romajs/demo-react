@@ -1,19 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { loadApplication } from './loadApplication'
+import { FullLoading } from '../misc/loading/FullLoading'
 
-class _Container extends Component {
+class _Container extends React.Component {
   componentDidMount () {
     this.props.loadApplication()
   }
 
   render () {
     const { loading } = this.props
-    if (loading) {
-      return <p>loading={loading.toString()}</p>
-    }
-    return this.props.children
+    return (
+      <React.Fragment>
+        <FullLoading loading={loading} />
+        {this.props.children}
+      </React.Fragment>
+    )
   }
 }
 

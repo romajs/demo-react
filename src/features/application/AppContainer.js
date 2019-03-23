@@ -1,10 +1,11 @@
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { loadApplication } from './loadApplication'
-import { FullLoading } from '../misc/loading/FullLoading'
 
-class _Container extends React.Component {
+import { FullLoading } from '../misc/loading/FullLoading'
+import { loadApplication } from './loadApplication'
+
+class _AppContainer extends React.Component {
   componentDidMount () {
     this.props.loadApplication()
   }
@@ -20,10 +21,10 @@ class _Container extends React.Component {
   }
 }
 
-_Container.propTypes = {
+_AppContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  loading: PropTypes.bool.isRequired,
-  loadApplication: PropTypes.func.isRequired
+  loadApplication: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -34,4 +35,7 @@ const mapDispatchToProps = ({
   loadApplication
 })
 
-export const AppLoaderContainer = connect(mapStateToProps, mapDispatchToProps)(_Container)
+export const AppContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_AppContainer)

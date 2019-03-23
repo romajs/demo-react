@@ -1,3 +1,4 @@
+import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -9,12 +10,13 @@ import registerServiceWorker from './registerServiceWorker'
 
 import './index.css'
 
-const store = configureStore()
+const history = createBrowserHistory()
+const store = configureStore({ history })
 
 ReactDOM.render((
   <Provider store={store}>
     <AppContainer>
-      <App />
+      <App history={history} />
     </AppContainer>
   </Provider>
 ), document.getElementById('root'))

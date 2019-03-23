@@ -1,5 +1,4 @@
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
@@ -39,7 +38,7 @@ _PageContainer.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  loading: state.application.loading,
+  location: state.router.location,
   sidebarOpen: state.application.sidebarOpen
 })
 
@@ -50,4 +49,4 @@ const mapDispatchToProps = ({
 export const PageContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(_PageContainer))
+)(_PageContainer)

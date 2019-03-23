@@ -1,12 +1,14 @@
+
 import { applyMiddleware, createStore } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly'
+import { routerMiddleware } from 'connected-react-router'
 import reduxLogger from 'redux-logger'
 import reduxThunk from 'redux-thunk'
 
-import { rootReducer } from './rootReducer'
+import createRootReducer from './createRootReducer'
 
-export default function configureStore (preloadedState) {
-  const middlewares = [reduxThunk]
+export default ({ history, preloadedState }) => {
+  const middlewares = [reduxThunk, routerMiddleware(history)]
 
   if (process.env.REACT_APP_USE_REDUX_LOGGER === 'true') {
     middlewares.push(reduxLogger)
@@ -16,10 +18,10 @@ export default function configureStore (preloadedState) {
 
   const composedEnhancers = composeWithDevTools(middlewareEnhancer)
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers)
+  const store = createStore(createRootReducer(history), preloadedState, composedEnhancers)
 
   if (process.env.NODE_ENV === 'development' && module.hot) {
-    module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer))
+    module.hot.accept('./createRootReducer', () => store.replaceReducer(createRootReducer(history)))
   }
 
   return store

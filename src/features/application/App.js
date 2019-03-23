@@ -8,15 +8,16 @@ import { HomePage } from '../home/HomePage'
 import { LoginPage } from '../auth/LoginPage'
 import { PrivatePage } from '../example/PrivatePage'
 import { PageContainer } from './misc/PageContainer'
+import { ROOT, HOME, LOGIN, PRIVATE } from '../../pages'
 
 export const App = ({ history }) => (
   <ConnectedRouter history={history}>
     <PageContainer>
       <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/home' component={HomePage} />
-        <Route exact path='/login' component={LoginPage} />
-        <PrivateRoute exact path='/private' component={PrivatePage} />
+        <Route exact path={ROOT.url} component={HomePage} />
+        <Route exact path={HOME.url} component={HomePage} />
+        <Route exact path={LOGIN.url} component={LoginPage} />
+        <PrivateRoute exact path={PRIVATE.url} component={PrivatePage} />
       </Switch>
     </PageContainer>
   </ConnectedRouter>

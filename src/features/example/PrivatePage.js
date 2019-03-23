@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
 import { fakeAuth } from '../../auth'
+import { HOME } from '../../pages'
 
 export const PrivatePage = ({ history }) => (
   <React.Fragment>
@@ -8,7 +9,7 @@ export const PrivatePage = ({ history }) => (
     <h1>Private</h1>
     <p>isAuthenticated={fakeAuth.isAuthenticated.toString()}</p>
     <div>
-      <button onClick={() => fakeAuth.logout(() => history.push('/home'))}>
+      <button onClick={() => fakeAuth.logout(() => history.push(HOME.url))}>
         Logout
       </button>
     </div>

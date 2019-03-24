@@ -28,7 +28,11 @@ export const _Sidebar = ({ classes, push, open, toggleSidebar }) => (
         {sidebarList.map((list, listIndex) => (
           <List key={`list-${listIndex}`}>
             {list.map((listItem, listItemIndex) => (
-              <ListItem button key={`list-item-${listIndex}-${listItemIndex}`}>
+              <ListItem
+                button
+                key={`list-item-${listIndex}-${listItemIndex}`}
+                onClick={() => push(listItem.url)}
+              >
                 <ListItemIcon>
                   {listItem.icon ? (
                     <listItem.icon />
@@ -38,7 +42,6 @@ export const _Sidebar = ({ classes, push, open, toggleSidebar }) => (
                 </ListItemIcon>
                 <ListItemText
                   primary={listItem.text}
-                  onClick={() => push(listItem.url)}
                 />
               </ListItem>
             ))}

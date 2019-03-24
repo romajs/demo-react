@@ -1,13 +1,16 @@
-import { Route } from 'react-router-dom'
+import { Redirect, Route } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import { LOGIN } from '../../pages'
-import withPageRedirect from '../page/withPageRedirect'
 
-export const PrivateRoute = ({ component, isAuthenticated, ...props }) => {
-  const Component = isAuthenticated ? component : withPageRedirect(LOGIN.url)
-  return <Route render={renderProps => <Component {...renderProps} />} {...props} />
+export const PrivateRoute = ({ component: Component, isAuthenticated, ...props }) => {
+  return <Route render={renderProps => isAuthenticated
+    ? (
+      <Component {...renderProps} />
+    ) : (
+      <Redirect to={LOGIN.url} />
+    )} {...props} />
 }
 
 PrivateRoute.propTypes = {

@@ -15,7 +15,6 @@ import * as pages from '../../pages'
 export const App = ({ history, isAuthenticated, loading }) => (
   <React.Fragment>
     <FullLoading loading={loading} />
-    {console.log(history.push)}
     <ConnectedRouter history={history}>
       <PageContainer push={history.push}>
         <Switch>

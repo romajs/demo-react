@@ -12,8 +12,11 @@ class _AppContainer extends React.Component {
   }
 
   render () {
-    const { history, isAuthenticated, loading } = this.props
-    console.log({ history })
+    const {
+      history,
+      isAuthenticated,
+      loading
+    } = this.props
     return (
       <App
         history={history}

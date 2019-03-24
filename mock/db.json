@@ -5,7 +5,7 @@
 		{
 			"id": 1,
 			"key": "bar",
-			"enabled": true
+			"enabled": false
 		},
 		{
 			"id": 2,
@@ -14,13 +14,23 @@
 		},
 		{
 			"id": 3,
-			"key": "privateBar",
+			"key": "home",
 			"enabled": true
 		},
 		{
 			"id": 4,
+			"key": "privateBar",
+			"enabled": false
+		},
+		{
+			"id": 5,
 			"key": "privateBaz",
 			"enabled": false
+		},
+		{
+			"id": 6,
+			"key": "privateHome",
+			"enabled": true
 		}
 	]
 }

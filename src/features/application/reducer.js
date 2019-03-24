@@ -6,7 +6,7 @@ const initialState = Immutable({
   configurations: [],
   featureFlags: [],
   loading: false,
-  sidebarOpen: false
+  sidebarOpen: true
 })
 
 export default handleActions({

@@ -14,9 +14,10 @@ export const App = ({ history, isAuthenticated, loading }) => (
     <PageContainer push={history.push} />
     <ConnectedRouter history={history}>
       <Switch>
-        {routes.map(([Component, props]) => (
+        {routes.map(([Component, props], index) => (
           <Component
             isAuthenticated={isAuthenticated}
+            key={`route=${index}`}
             {...props}
           />
         ))}

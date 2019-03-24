@@ -4,7 +4,7 @@ export const BarPage = () => (
   <div style={{ textAlign: 'center' }}>
     <h1>Bar</h1>
     <div>
-      {Math.random()}
+      <p>{Math.random()}</p>
     </div>
   </div>
 )

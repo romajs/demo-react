@@ -3,5 +3,6 @@ import axios from 'axios'
 const version = 'v1'
 
 export const configurationService = {
-  loadConfigurations: () => axios.get(`/api/${version}/configurations`)
+  find: () => axios.get(`/api/${version}/configurations`)
+    .then(({ data }) => data)
 }

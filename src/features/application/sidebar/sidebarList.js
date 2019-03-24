@@ -37,11 +37,19 @@ export default [
       icon: icons.CropDin
     }
   ],
+  /**
+   * TODO: Dynamic render LOGIN x LOGOUT
+   */
   [
     {
       text: pages.LOGIN.title,
       url: pages.LOGIN.url,
-      icon: icons.LockOpen
+      icon: icons.Portrait
+    },
+    {
+      text: pages.LOGOUT.title,
+      url: pages.LOGOUT.url,
+      icon: icons.ExitToApp
     }
   ]
 ]

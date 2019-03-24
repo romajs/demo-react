@@ -32,6 +32,14 @@ export const LOGIN = {
   title: 'Login'
 }
 
+export const LOGOUT = {
+  enabled: true,
+  showSidebar: true,
+  showNavbar: true,
+  url: '/logout',
+  title: 'Logout'
+}
+
 export const PRIVATE_BAR = {
   enabled: true,
   showSidebar: true,
@@ -61,6 +69,7 @@ export const allPages = [
   BAZ,
   HOME,
   LOGIN,
+  LOGOUT,
   PRIVATE_BAR,
   PRIVATE_BAZ,
   PRIVATE_HOME

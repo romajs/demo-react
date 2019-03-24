@@ -1,21 +1,22 @@
 import { connect } from 'react-redux'
+import { push } from 'connected-react-router'
 import Button from '@material-ui/core/Button'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { logout } from '../auth/actions'
+import { LOGOUT } from '../../pages'
 
-export const _PrivateHomePage = ({ isAuthenticated, logout }) => (
+export const _PrivateHomePage = ({ isAuthenticated, push }) => (
   <div style={{ textAlign: 'center' }}>
     <h1>Private</h1>
     <p>isAuthenticated={isAuthenticated.toString()}</p>
-    <Button color='inherit' onClick={logout}>Logout</Button>
+    <Button color='inherit' onClick={() => push(LOGOUT.url)}>Logout</Button>
   </div>
 )
 
 _PrivateHomePage.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  logout: PropTypes.func.isRequired
+  push: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => ({
@@ -23,7 +24,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = ({
-  logout
+  push
 })
 
 export const PrivateHomePageContainer = connect(

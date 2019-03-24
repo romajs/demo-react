@@ -36,11 +36,15 @@ export const Page = ({
 Page.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   page: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    showNavbar: PropTypes.bool.isRequired,
-    showSidebar: PropTypes.bool.isRequired
-  }).isRequired,
+    title: PropTypes.string,
+    showNavbar: PropTypes.bool,
+    showSidebar: PropTypes.bool
+  }),
   push: PropTypes.func.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
+}
+
+Page.defaultProps = {
+  page: {}
 }

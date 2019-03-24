@@ -8,7 +8,7 @@ import { loadApplication } from './loadApplication'
 
 class _AppContainer extends React.Component {
   componentDidMount () {
-    // this.props.loadApplication()
+    this.props.loadApplication()
   }
 
   render () {
@@ -30,7 +30,7 @@ class _AppContainer extends React.Component {
 _AppContainer.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  // loadApplication: PropTypes.func.isRequired,
+  loadApplication: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 }
 

@@ -1,7 +1,26 @@
 {
-  "configurations": [
-    { "id": 1, "key": "foo", "value": "123" },
-    { "id": 2, "key": "bar", "value": "456" },
-    { "id": 3, "key": "baz", "value": "789" }
-  ]
+	"configurations": [
+	],
+	"featureFlags": [
+		{
+			"id": 1,
+			"key": "bar",
+			"enabled": true
+		},
+		{
+			"id": 2,
+			"key": "baz",
+			"enabled": false
+		},
+		{
+			"id": 3,
+			"key": "privateBar",
+			"enabled": true
+		},
+		{
+			"id": 4,
+			"key": "privateBaz",
+			"enabled": false
+		}
+	]
 }

@@ -1,6 +1,6 @@
 import * as icons from '@material-ui/icons'
 
-import * as pages from './pages'
+import * as pages from '../../../pages'
 
 export default [
   [

@@ -7,7 +7,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import sidebarList from '../../../sidebarList'
+import sidebarList from './sidebarList'
 
 const styles = {
   list: {

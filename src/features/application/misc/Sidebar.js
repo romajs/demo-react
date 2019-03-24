@@ -18,35 +18,38 @@ const styles = {
   }
 }
 
-export const _Sidebar = ({ classes, push, open, toggleSidebar }) => {
-  let dividers = 0
-  return (
-    <Drawer open={open} onClose={() => toggleSidebar(false)}>
-      <div
-        role='button'
-        onClick={() => toggleSidebar(false)}
-      >
-        <div className={classes.list}>
-          {sidebarList.map((list, listIndex) => (
-            <List key={`list-${listIndex}`}>
-              {list.map((listItem, listItemIndex) => (
-                <ListItem button key={`list-item-${listIndex}-${listItemIndex}`}>
-                  <ListItemIcon>
+export const _Sidebar = ({ classes, push, open, toggleSidebar }) => (
+  <Drawer open={open} onClose={() => toggleSidebar(false)}>
+    <div
+      role='button'
+      onClick={() => toggleSidebar(false)}
+    >
+      <div className={classes.list}>
+        {sidebarList.map((list, listIndex) => (
+          <List key={`list-${listIndex}`}>
+            {list.map((listItem, listItemIndex) => (
+              <ListItem button key={`list-item-${listIndex}-${listItemIndex}`}>
+                <ListItemIcon>
+                  {listItem.icon ? (
                     <listItem.icon />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={listItem.text}
-                    onClick={() => push(listItem.url)}
-                  />
-                </ListItem>
-              ))}
-            </List>
-          )).reduce((acc, cur) => [acc, <Divider key={`divider-${dividers++}`} />, cur])}
-        </div>
+                  ) : (
+                    <React.Fragment />
+                  )}
+                </ListItemIcon>
+                <ListItemText
+                  primary={listItem.text}
+                  onClick={() => push(listItem.url)}
+                />
+              </ListItem>
+            ))}
+          </List>
+        )).reduce((acc, cur, index) => (
+          [acc, <Divider key={`divider-${index}`} />, cur]
+        ))}
       </div>
-    </Drawer>
-  )
-}
+    </div>
+  </Drawer>
+)
 
 _Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,

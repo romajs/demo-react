@@ -1,28 +1,46 @@
 import * as icons from '@material-ui/icons'
 
-import {
-  HOME,
-  PRIVATE,
-  LOGIN
-} from './pages'
+import * as pages from './pages'
 
 export default [
   [
     {
-      text: HOME.title,
-      url: HOME.url,
+      text: pages.HOME.title,
+      url: pages.HOME.url,
       icon: icons.Home
     },
     {
-      text: PRIVATE.title,
-      url: PRIVATE.url,
-      icon: icons.Security
+      text: pages.BAR.title,
+      url: pages.BAR.url,
+      icon: icons.CropDin
+    },
+    {
+      text: pages.BAZ.title,
+      url: pages.BAZ.url,
+      icon: icons.CropDin
     }
   ],
   [
     {
-      text: LOGIN.title,
-      url: LOGIN.url,
+      text: pages.PRIVATE_HOME.title,
+      url: pages.PRIVATE_HOME.url,
+      icon: icons.Security
+    },
+    {
+      text: pages.PRIVATE_BAR.title,
+      url: pages.PRIVATE_BAR.url,
+      icon: icons.CropDin
+    },
+    {
+      text: pages.PRIVATE_BAZ.title,
+      url: pages.PRIVATE_BAZ.url,
+      icon: icons.CropDin
+    }
+  ],
+  [
+    {
+      text: pages.LOGIN.title,
+      url: pages.LOGIN.url,
       icon: icons.LockOpen
     }
   ]

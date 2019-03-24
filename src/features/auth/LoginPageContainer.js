@@ -5,11 +5,11 @@ import React from 'react'
 
 import { login } from './actions'
 import { LoginForm } from './LoginForm'
-import { PRIVATE } from '../../pages'
+import { PRIVATE_HOME } from '../../pages'
 
 export const _LoginPageContainer = ({ isAuthenticated, login }) => (
   isAuthenticated ? (
-    <Redirect to={PRIVATE.url} />
+    <Redirect to={PRIVATE_HOME.url} />
   ) : (
     <LoginForm
       isAuthenticated={isAuthenticated}

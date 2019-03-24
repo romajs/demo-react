@@ -5,7 +5,7 @@ import React from 'react'
 
 import { logout } from '../auth/actions'
 
-export const _PrivatePage = ({ isAuthenticated, logout }) => (
+export const _PrivateHomePage = ({ isAuthenticated, logout }) => (
   <div style={{ textAlign: 'center' }}>
     <h1>Private</h1>
     <p>isAuthenticated={isAuthenticated.toString()}</p>
@@ -13,7 +13,7 @@ export const _PrivatePage = ({ isAuthenticated, logout }) => (
   </div>
 )
 
-_PrivatePage.propTypes = {
+_PrivateHomePage.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   logout: PropTypes.func.isRequired
 }
@@ -26,7 +26,7 @@ const mapDispatchToProps = ({
   logout
 })
 
-export const PrivatePageContainer = connect(
+export const PrivateHomePageContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_PrivatePage)
+)(_PrivateHomePage)

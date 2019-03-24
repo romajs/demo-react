@@ -1,33 +1,38 @@
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ReactRouterPropTypes from 'react-router-prop-types'
 
-import { FullLoading } from '../misc/loading/FullLoading'
+import { App } from './App'
 import { loadApplication } from './loadApplication'
 
 class _AppContainer extends React.Component {
   componentDidMount () {
-    this.props.loadApplication()
+    // this.props.loadApplication()
   }
 
   render () {
-    const { loading } = this.props
+    const { history, isAuthenticated, loading } = this.props
+    console.log({ history })
     return (
-      <React.Fragment>
-        <FullLoading loading={loading} />
-        {this.props.children}
-      </React.Fragment>
+      <App
+        history={history}
+        isAuthenticated={isAuthenticated}
+        loading={loading}
+      />
     )
   }
 }
 
 _AppContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  loadApplication: PropTypes.func.isRequired,
+  history: ReactRouterPropTypes.history.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  // loadApplication: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
   loading: state.application.loading
 })
 

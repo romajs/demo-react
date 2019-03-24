@@ -1,10 +1,12 @@
 import React from 'react'
 
 export const HomePage = () => (
-  <React.Fragment>
-    <hr />
-    <h1>HomePage</h1>
-  </React.Fragment>
+  <div style={{ textAlign: 'center' }}>
+    <h1>Home</h1>
+    <div>
+      Welcome!
+    </div>
+  </div>
 )
 
 HomePage.propTypes = {

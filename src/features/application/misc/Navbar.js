@@ -1,12 +1,15 @@
 import { withStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
-// import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
+import PersonIcon from '@material-ui/icons/Person'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+
+import { LOGIN } from '../../../pages'
 
 const styles = {
   root: {
@@ -21,7 +24,7 @@ const styles = {
   }
 }
 
-const _Navbar = ({ classes, pageTitle, toggleSidebar }) => (
+const _Navbar = ({ classes, isAuthenticated, pageTitle, push, toggleSidebar }) => (
   <div className={classes.root}>
     <AppBar position='static'>
       <Toolbar>
@@ -36,8 +39,11 @@ const _Navbar = ({ classes, pageTitle, toggleSidebar }) => (
         <Typography variant='h6' color='inherit' className={classes.grow}>
           {pageTitle}
         </Typography>
-        {/* TODO: verify if user is authenticated */}
-        {/* <Button color='inherit'>Login</Button> */}
+        { isAuthenticated ? (
+          <PersonIcon />
+        ) : (
+          <Button color='inherit' onClick={() => push(LOGIN.url)}>Login</Button>
+        )}
       </Toolbar>
     </AppBar>
   </div>
@@ -45,7 +51,9 @@ const _Navbar = ({ classes, pageTitle, toggleSidebar }) => (
 
 _Navbar.propTypes = {
   classes: PropTypes.object.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
   pageTitle: PropTypes.string.isRequired,
+  push: PropTypes.func.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
 

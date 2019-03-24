@@ -1,4 +1,3 @@
-import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
@@ -8,7 +7,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
 import sidebarList from '../../../sidebarList'
 
 const styles = {
@@ -20,7 +18,8 @@ const styles = {
   }
 }
 
-export const _Sidebar = ({ classes, history, open, toggleSidebar }) => {
+export const _Sidebar = ({ classes, push, open, toggleSidebar }) => {
+  let dividers = 0
   return (
     <Drawer open={open} onClose={() => toggleSidebar(false)}>
       <div
@@ -29,7 +28,7 @@ export const _Sidebar = ({ classes, history, open, toggleSidebar }) => {
       >
         <div className={classes.list}>
           {sidebarList.map((list, listIndex) => (
-            <List>
+            <List key={`list-${listIndex}`}>
               {list.map((listItem, listItemIndex) => (
                 <ListItem button key={`list-item-${listIndex}-${listItemIndex}`}>
                   <ListItemIcon>
@@ -37,13 +36,12 @@ export const _Sidebar = ({ classes, history, open, toggleSidebar }) => {
                   </ListItemIcon>
                   <ListItemText
                     primary={listItem.text}
-                    onClick={() => history.push(listItem.url)}
+                    onClick={() => push(listItem.url)}
                   />
                 </ListItem>
-
               ))}
             </List>
-          )).reduce((acc, cur) => [acc, <Divider />, cur])}
+          )).reduce((acc, cur) => [acc, <Divider key={`divider-${dividers++}`} />, cur])}
         </div>
       </div>
     </Drawer>
@@ -52,9 +50,9 @@ export const _Sidebar = ({ classes, history, open, toggleSidebar }) => {
 
 _Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,
-  history: ReactRouterPropTypes.history.isRequired,
+  push: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
 
-export const Sidebar = withRouter(withStyles(styles)(_Sidebar))
+export const Sidebar = withStyles(styles)(_Sidebar)

@@ -1,29 +1,36 @@
 import { ConnectedRouter } from 'connected-react-router'
-import { Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
 
+import { FullLoading } from '../misc/loading/FullLoading'
 import { HomePage } from '../home/HomePage'
-import { LoginPage } from '../auth/LoginPage'
+import { LoginPageContainer } from '../auth/LoginPageContainer'
 import { PageContainer } from './misc/PageContainer'
-import { PrivatePage } from '../example/PrivatePage'
+import { PrivatePageContainer } from '../example/PrivatePageContainer'
 import { PrivateRoute } from '../auth/PrivateRoute'
-import { RootPage } from '../page/RootPage'
 import * as pages from '../../pages'
 
-export const App = ({ history }) => (
-  <ConnectedRouter history={history}>
-    <PageContainer>
-      <Switch>
-        <Route exact path={pages.ROOT.url} component={RootPage} />
-        <Route exact path={pages.HOME.url} component={HomePage} />
-        <Route exact path={pages.LOGIN.url} component={LoginPage} />
-        <PrivateRoute exact path={pages.PRIVATE.url} component={PrivatePage} />
-      </Switch>
-    </PageContainer>
-  </ConnectedRouter>
+export const App = ({ history, isAuthenticated, loading }) => (
+  <React.Fragment>
+    <FullLoading loading={loading} />
+    {console.log(history.push)}
+    <ConnectedRouter history={history}>
+      <PageContainer push={history.push}>
+        <Switch>
+          <Redirect exact from={pages.ROOT_PATH} to={pages.HOME.url} />
+          <Route exact path={pages.HOME.url} component={HomePage} />
+          <Route exact path={pages.LOGIN.url} component={LoginPageContainer} />
+          <PrivateRoute exact path={pages.PRIVATE.url} component={PrivatePageContainer} isAuthenticated={isAuthenticated} />
+        </Switch>
+      </PageContainer>
+    </ConnectedRouter>
+  </React.Fragment>
 )
 
 App.propTypes = {
-  history: ReactRouterPropTypes.history.isRequired
+  history: ReactRouterPropTypes.history.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired
 }

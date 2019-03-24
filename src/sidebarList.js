@@ -2,7 +2,8 @@ import * as icons from '@material-ui/icons'
 
 import {
   HOME,
-  PRIVATE
+  PRIVATE,
+  LOGIN
 } from './pages'
 
 export default [
@@ -16,6 +17,13 @@ export default [
       text: PRIVATE.title,
       url: PRIVATE.url,
       icon: icons.Security
+    }
+  ],
+  [
+    {
+      text: LOGIN.title,
+      url: LOGIN.url,
+      icon: icons.LockOpen
     }
   ]
 ]

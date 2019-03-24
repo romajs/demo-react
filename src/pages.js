@@ -1,3 +1,5 @@
+export const ROOT_PATH = '/'
+
 export const HOME = {
   enabled: true,
   showSidebar: true,
@@ -22,23 +24,12 @@ export const PRIVATE = {
   title: 'Private'
 }
 
-export const ROOT = {
-  enabled: true,
-  showSidebar: true,
-  showNavbar: true,
-  title: 'Home',
-  url: '/'
-}
-
 export const allPages = [
   HOME,
   LOGIN,
-  PRIVATE,
-  ROOT
+  PRIVATE
 ]
 
+export const enabledPages = allPages.filter(page => page.enabled)
+
 export const fromUrl = url => allPages.find(page => page.url === url)
-
-const pages = allPages.filter(page => page.enabled)
-
-export default pages

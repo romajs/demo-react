@@ -8,7 +8,10 @@ import reduxThunk from 'redux-thunk'
 import createRootReducer from './createRootReducer'
 
 export default ({ history, preloadedState }) => {
-  const middlewares = [reduxThunk, routerMiddleware(history)]
+  const middlewares = [
+    reduxThunk,
+    routerMiddleware(history)
+  ]
 
   if (process.env.REACT_APP_USE_REDUX_LOGGER === 'true') {
     middlewares.push(reduxLogger)

@@ -3,7 +3,6 @@ import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { App } from './features/application/App'
 import { AppContainer } from './features/application/AppContainer'
 import configureStore from './configureStore'
 import registerServiceWorker from './registerServiceWorker'
@@ -15,9 +14,7 @@ const store = configureStore({ history })
 
 ReactDOM.render((
   <Provider store={store}>
-    <AppContainer>
-      <App history={history} />
-    </AppContainer>
+    <AppContainer history={history} />
   </Provider>
 ), document.getElementById('root'))
 

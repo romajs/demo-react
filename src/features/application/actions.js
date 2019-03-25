@@ -1,17 +1,19 @@
 import { createActions } from 'redux-actions'
 
+const defaultOp = value => value
+
 export const {
   setConfigurations,
   setFeatureFlags,
-  setLoading,
-  setPage,
-  setSidebarOpen
+  setPageLoading,
+  setSidebarOpen,
+  setWindowLoading
 } = createActions({
-  SET_CONFIGURATIONS: ({ configurations }) => ({ configurations }),
-  SET_FEATURE_FLAGS: ({ featureFlags }) => ({ featureFlags }),
-  SET_LOADING: loading => ({ loading }),
-  SET_PAGE: ({ page }) => ({ page }),
-  SET_SIDEBAR_OPEN: ({ sidebarOpen }) => ({ sidebarOpen })
+  SET_CONFIGURATIONS: defaultOp,
+  SET_FEATURE_FLAGS: defaultOp,
+  SET_PAGE_LOADING: defaultOp,
+  SET_SIDEBAR_OPEN: defaultOp,
+  SET_WINDOW_LOADING: defaultOp
 }, {
   prefix: 'APPLICATION'
 })

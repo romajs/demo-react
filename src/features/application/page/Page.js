@@ -2,12 +2,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import { Header } from '../header/Header'
+import { LinearLoading } from '../../misc/loading/LinearLoading'
 import { Navbar } from '../header/Navbar'
 import { Sidebar } from '../sidebar/Sidebar'
 
 export const Page = ({
   isAuthenticated,
   page,
+  pageLoading,
   push,
   sidebarOpen,
   toggleSidebar
@@ -15,6 +17,9 @@ export const Page = ({
   return (
     <React.Fragment>
       <Header>
+        <div style={{ position: 'absolute', top: '0', width: '100%' }}>
+          <LinearLoading loading={pageLoading} />
+        </div>
         <Navbar
           isAuthenticated={isAuthenticated}
           pageTitle={page.title}
@@ -40,6 +45,7 @@ Page.propTypes = {
     showNavbar: PropTypes.bool,
     showSidebar: PropTypes.bool
   }),
+  pageLoading: PropTypes.bool.isRequired,
   push: PropTypes.func.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired

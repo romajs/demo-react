@@ -1,17 +1,17 @@
 import { configurationService } from './configurationService'
 import { featureFlagService } from './featureFlagService'
-import { setLoading, setFeatureFlags, setConfigurations } from './actions'
+import * as actions from './actions'
 import features from './features'
 
 export const loadApplication = () => async dispatch => {
-  dispatch(setLoading(true))
+  dispatch(actions.setWindowLoading(true))
 
   const configurations = await configurationService.find()
-  dispatch(setConfigurations({ configurations }))
+  dispatch(actions.setConfigurations(configurations))
 
   const featureFlags = await featureFlagService.find()
-  dispatch(setFeatureFlags({ featureFlags }))
+  dispatch(actions.setFeatureFlags(featureFlags))
   features.set(featureFlags)
 
-  dispatch(setLoading(false))
+  dispatch(actions.setWindowLoading(false))
 }

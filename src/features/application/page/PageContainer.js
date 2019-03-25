@@ -11,6 +11,7 @@ export const _PageContainer = ({
   isAuthenticated,
   location,
   push,
+  pageLoading,
   sidebarOpen,
   toggleSidebar
 }) => (
@@ -18,6 +19,7 @@ export const _PageContainer = ({
     isAuthenticated={isAuthenticated}
     location={location}
     page={fromUrl(location.pathname)}
+    pageLoading={pageLoading}
     push={push}
     sidebarOpen={sidebarOpen}
     toggleSidebar={toggleSidebar}
@@ -28,6 +30,7 @@ _PageContainer.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
   location: ReactRouterPropTypes.location.isRequired,
   push: PropTypes.func.isRequired,
+  pageLoading: PropTypes.bool.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }
@@ -35,7 +38,7 @@ _PageContainer.propTypes = {
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   location: state.router.location,
-  page: state.application.page,
+  pageLoading: state.application.pageLoading,
   sidebarOpen: state.application.sidebarOpen
 })
 

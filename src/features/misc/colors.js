@@ -1,3 +1,3 @@
 export const colors = {
-  whiteSmoke: '#f5f5f5'
+  whisper: '#eeeeee'
 }

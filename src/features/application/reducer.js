@@ -5,21 +5,25 @@ import * as actions from './actions'
 const initialState = Immutable({
   configurations: [],
   featureFlags: [],
-  loading: false,
-  sidebarOpen: true
+  pageLoading: false,
+  sidebarOpen: false,
+  windowLoading: false
 })
 
 export default handleActions({
   [actions.setConfigurations]: (state, { payload }) => {
-    return Immutable.set(state, 'configurations', payload.configurations)
+    return Immutable.set(state, 'configurations', payload)
   },
   [actions.setFeatureFlags]: (state, { payload }) => {
-    return Immutable.set(state, 'featureFlags', payload.featureFlags)
+    return Immutable.set(state, 'featureFlags', payload)
   },
-  [actions.setLoading]: (state, { payload }) => {
-    return Immutable.set(state, 'loading', payload.loading)
+  [actions.setPageLoading]: (state, { payload }) => {
+    return Immutable.set(state, 'pageLoading', payload)
   },
   [actions.setSidebarOpen]: (state, { payload }) => {
-    return Immutable.set(state, 'sidebarOpen', payload.sidebarOpen)
+    return Immutable.set(state, 'sidebarOpen', payload)
+  },
+  [actions.setWindowLoading]: (state, { payload }) => {
+    return Immutable.set(state, 'windowLoading', payload)
   }
 }, initialState)

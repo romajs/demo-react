@@ -8,6 +8,6 @@ const initialState = Immutable({
 
 export default handleActions({
   [actions.setIsAuthenticated]: (state, { payload }) => {
-    return Immutable.set(state, 'isAuthenticated', payload.isAuthenticated)
+    return Immutable.set(state, 'isAuthenticated', payload)
   }
 }, initialState)

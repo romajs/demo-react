@@ -4,17 +4,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { FullOverlay } from '../FullOverlay'
-import loadingSpinner from './loadingSpinner.svg'
+import { CircularLoading } from '../loading/CircularLoading'
 
-import './loadingTransition.css'
-
-/**
- * Created with https://loading.io
- */
-
-const VerticalAlignImage = styled.img`
-  vertical-align: middle;
-`
+import './FullLoading.css'
 
 const VerticalAlignHelper = styled.div`
   display: inline-block;
@@ -32,7 +24,7 @@ export const FullLoading = ({ loading }) => (
   >
     <FullOverlay>
       <VerticalAlignHelper />
-      <VerticalAlignImage src={loadingSpinner} />
+      <CircularLoading />
     </FullOverlay>
   </CSSTransition>
 )

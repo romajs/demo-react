@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
 
-import { FullLoading } from '../misc/loading/FullLoading'
+import { FullLoading } from '../misc/FullLoading/FullLoading'
 import { PageContainer } from './page/PageContainer'
 import { routes } from './routes'
 

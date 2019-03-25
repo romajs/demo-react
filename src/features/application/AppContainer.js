@@ -15,13 +15,13 @@ class _AppContainer extends React.Component {
     const {
       history,
       isAuthenticated,
-      loading
+      windowLoading
     } = this.props
     return (
       <App
         history={history}
         isAuthenticated={isAuthenticated}
-        loading={loading}
+        loading={windowLoading}
       />
     )
   }
@@ -31,12 +31,12 @@ _AppContainer.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   loadApplication: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired
+  windowLoading: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
-  loading: state.application.loading
+  windowLoading: state.application.windowLoading
 })
 
 const mapDispatchToProps = ({

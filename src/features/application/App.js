@@ -4,15 +4,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
 
-import { FullLoading } from '../misc/FullLoading/FullLoading'
 import { PageContainer } from './page/PageContainer'
 import { routes } from './routes'
 
-export const App = ({ history, isAuthenticated, loading }) => (
-  <React.Fragment>
-    <FullLoading loading={loading} />
-    <PageContainer push={history.push} />
-    <ConnectedRouter history={history}>
+export const App = ({ history, isAuthenticated }) => (
+  <ConnectedRouter history={history}>
+    <PageContainer>
       <Switch>
         {routes.map(([Component, props], index) => (
           <Component
@@ -22,12 +19,11 @@ export const App = ({ history, isAuthenticated, loading }) => (
           />
         ))}
       </Switch>
-    </ConnectedRouter>
-  </React.Fragment>
+    </PageContainer>
+  </ConnectedRouter>
 )
 
 App.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
-  loading: PropTypes.bool.isRequired
+  isAuthenticated: PropTypes.bool.isRequired
 }

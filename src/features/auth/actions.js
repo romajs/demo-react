@@ -9,9 +9,9 @@ export const {
   prefix: 'AUTH'
 })
 
-export const login = () => dispatch => {
+export const login = (username, password) => dispatch => {
   dispatch(setPageLoading(true))
-  // TODO: simulating auth
+  // TODO: await authService.authenticate(username, password)
   setTimeout(() => {
     dispatch(setIsAuthenticated(true))
     dispatch(setPageLoading(false))

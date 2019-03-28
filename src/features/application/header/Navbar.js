@@ -1,11 +1,13 @@
+import { withRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import AppBar from '@material-ui/core/AppBar'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import Button from '@material-ui/core/Button'
 import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import PropTypes from 'prop-types'
 import React from 'react'
+import ReactRouterPropTypes from 'react-router-prop-types'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
@@ -24,7 +26,7 @@ const styles = {
   }
 }
 
-const _Navbar = ({ classes, isAuthenticated, pageTitle, push, toggleSidebar }) => (
+const _Navbar = ({ classes, history, isAuthenticated, title, toggleSidebar }) => (
   <div className={classes.root}>
     <AppBar position='static'>
       <Toolbar>
@@ -37,12 +39,12 @@ const _Navbar = ({ classes, isAuthenticated, pageTitle, push, toggleSidebar }) =
           <MenuIcon />
         </IconButton>
         <Typography variant='h6' color='inherit' className={classes.grow}>
-          {pageTitle}
+          {title}
         </Typography>
         { isAuthenticated ? (
           <AccountCircleIcon />
         ) : (
-          <Button color='inherit' onClick={() => push(LOGIN.url)}>Login</Button>
+          <Button color='inherit' onClick={() => history.push(LOGIN.url)}>Login</Button>
         )}
       </Toolbar>
     </AppBar>
@@ -51,10 +53,14 @@ const _Navbar = ({ classes, isAuthenticated, pageTitle, push, toggleSidebar }) =
 
 _Navbar.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: ReactRouterPropTypes.history.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  pageTitle: PropTypes.string.isRequired,
-  push: PropTypes.func.isRequired,
+  title: PropTypes.string,
   toggleSidebar: PropTypes.func.isRequired
 }
 
-export const Navbar = withStyles(styles)(_Navbar)
+_Navbar.defaultProps = {
+  title: ''
+}
+
+export const Navbar = withRouter(withStyles(styles)(_Navbar))

@@ -8,9 +8,9 @@ import { fromUrl } from '../../../pages'
 import { Page } from './Page'
 
 export const _PageContainer = ({
+  children,
   isAuthenticated,
   location,
-  push,
   pageLoading,
   sidebarOpen,
   toggleSidebar
@@ -20,16 +20,17 @@ export const _PageContainer = ({
     location={location}
     page={fromUrl(location.pathname)}
     pageLoading={pageLoading}
-    push={push}
     sidebarOpen={sidebarOpen}
     toggleSidebar={toggleSidebar}
-  />
+  >
+    {children}
+  </Page>
 )
 
 _PageContainer.propTypes = {
+  children: PropTypes.node.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   location: ReactRouterPropTypes.location.isRequired,
-  push: PropTypes.func.isRequired,
   pageLoading: PropTypes.bool.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired

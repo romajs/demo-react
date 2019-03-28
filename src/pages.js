@@ -1,7 +1,6 @@
 export const ROOT_PATH = '/'
 
 export const BAR = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   title: 'Bar',
@@ -9,7 +8,6 @@ export const BAR = {
 }
 
 export const BAZ = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   title: 'Baz',
@@ -17,7 +15,6 @@ export const BAZ = {
 }
 
 export const HOME = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   title: 'Home',
@@ -25,7 +22,6 @@ export const HOME = {
 }
 
 export const LOGIN = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   url: '/login',
@@ -33,7 +29,6 @@ export const LOGIN = {
 }
 
 export const LOGOUT = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   url: '/logout',
@@ -41,7 +36,6 @@ export const LOGOUT = {
 }
 
 export const PRIVATE_BAR = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   title: 'Private Bar',
@@ -49,7 +43,6 @@ export const PRIVATE_BAR = {
 }
 
 export const PRIVATE_BAZ = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   title: 'Private Baz',
@@ -57,7 +50,6 @@ export const PRIVATE_BAZ = {
 }
 
 export const PRIVATE_HOME = {
-  enabled: true,
   showSidebar: true,
   showNavbar: true,
   url: '/private/home',
@@ -75,6 +67,6 @@ export const allPages = [
   PRIVATE_HOME
 ]
 
-export const enabledPages = allPages.filter(page => page.enabled)
-
 export const fromUrl = url => allPages.find(page => page.url === url)
+
+export default allPages

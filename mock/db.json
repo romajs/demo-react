@@ -1,36 +1,37 @@
 {
-	"configurations": [
-	],
-	"featureFlags": [
-		{
-			"id": 1,
-			"key": "bar",
-			"enabled": false
-		},
-		{
-			"id": 2,
-			"key": "baz",
-			"enabled": false
-		},
-		{
-			"id": 3,
-			"key": "home",
-			"enabled": true
-		},
-		{
-			"id": 4,
-			"key": "privateBar",
-			"enabled": false
-		},
-		{
-			"id": 5,
-			"key": "privateBaz",
-			"enabled": false
-		},
-		{
-			"id": 6,
-			"key": "privateHome",
-			"enabled": true
-		}
-	]
+  "auth": [
+  ],
+  "configurations": [],
+  "featureFlags": [
+    {
+      "id": 1,
+      "key": "bar",
+      "enabled": false
+    },
+    {
+      "id": 2,
+      "key": "baz",
+      "enabled": false
+    },
+    {
+      "id": 3,
+      "key": "home",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "key": "privateBar",
+      "enabled": false
+    },
+    {
+      "id": 5,
+      "key": "privateBaz",
+      "enabled": false
+    },
+    {
+      "id": 6,
+      "key": "privateHome",
+      "enabled": true
+    }
+  ]
 }

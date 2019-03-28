@@ -1,5 +1,5 @@
 {
-  "delay": 500,
+  "delay": 1000,
   "port": 3001,
   "routes": "mock/routes.json",
   "watch": true

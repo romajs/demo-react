@@ -1,13 +1,12 @@
 import { withStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
+import features from '../features'
 import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import ListItemIcon from '@material-ui/core/ListItemIcon'
-import ListItemText from '@material-ui/core/ListItemText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import sidebarList from './sidebarList'
+
+import * as SidebarItems from './SidebarItems'
 
 const styles = {
   list: {
@@ -18,37 +17,26 @@ const styles = {
   }
 }
 
-export const _Sidebar = ({ classes, push, open, toggleSidebar }) => (
+export const _Sidebar = ({ classes, isAuthenticated, open, toggleSidebar }) => (
   <Drawer open={open} onClose={() => toggleSidebar(false)}>
-    <div
-      role='button'
-      onClick={() => toggleSidebar(false)}
-    >
+    <div role='button' onClick={() => toggleSidebar(false)}>
       <div className={classes.list}>
-        {sidebarList.map((list, listIndex) => (
-          <List key={`list-${listIndex}`}>
-            {list.map((listItem, listItemIndex) => (
-              <ListItem
-                button
-                key={`list-item-${listIndex}-${listItemIndex}`}
-                onClick={() => push(listItem.url)}
-              >
-                <ListItemIcon>
-                  {listItem.icon ? (
-                    <listItem.icon />
-                  ) : (
-                    <React.Fragment />
-                  )}
-                </ListItemIcon>
-                <ListItemText
-                  primary={listItem.text}
-                />
-              </ListItem>
-            ))}
-          </List>
-        )).reduce((acc, cur, index) => (
-          [acc, <Divider key={`divider-${index}`} />, cur]
-        ))}
+        <List>
+          {features.home && <SidebarItems.Home />}
+          {features.bar && <SidebarItems.Bar />}
+          {features.baz && <SidebarItems.Baz />}
+        </List>
+        <Divider />
+        <List>
+          {features.privateHome && <SidebarItems.PrivateHome />}
+          {features.privateBar && <SidebarItems.PrivateBar />}
+          {features.privateBaz && <SidebarItems.PrivateBaz />}
+        </List>
+        <Divider />
+        <List>
+          {!isAuthenticated && <SidebarItems.Login />}
+          {isAuthenticated && <SidebarItems.Logout />}
+        </List>
       </div>
     </div>
   </Drawer>
@@ -56,7 +44,7 @@ export const _Sidebar = ({ classes, push, open, toggleSidebar }) => (
 
 _Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,
-  push: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
   open: PropTypes.bool.isRequired,
   toggleSidebar: PropTypes.func.isRequired
 }

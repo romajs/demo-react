@@ -4,6 +4,7 @@ import React from 'react'
 import ReactRouterPropTypes from 'react-router-prop-types'
 
 import { App } from './App'
+import { FullLoading } from '../misc/FullLoading/FullLoading'
 import { loadApplication } from './loadApplication'
 
 class _AppContainer extends React.Component {
@@ -18,11 +19,16 @@ class _AppContainer extends React.Component {
       windowLoading
     } = this.props
     return (
-      <App
-        history={history}
-        isAuthenticated={isAuthenticated}
-        loading={windowLoading}
-      />
+      <React.Fragment>
+        <FullLoading loading={windowLoading} />
+        {!windowLoading && (
+          <App
+            history={history}
+            isAuthenticated={isAuthenticated}
+            loading={windowLoading}
+          />
+        )}
+      </React.Fragment>
     )
   }
 }

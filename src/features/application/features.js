@@ -1,17 +1,12 @@
-export const BAR = 'bar'
-export const BAZ = 'baz'
-export const HOME = 'home'
-export const PRIVATE_BAR = 'privateBar'
-export const PRIVATE_BAZ = 'privateBaz'
-export const PRIVATE_HOME = 'privateHome'
+import featureNames from './featureNames'
 
 const flags = {
-  [BAR]: false,
-  [BAZ]: false,
-  [HOME]: false,
-  [PRIVATE_BAR]: false,
-  [PRIVATE_BAZ]: false,
-  [PRIVATE_HOME]: false,
+  [featureNames.BAR]: false,
+  [featureNames.BAZ]: false,
+  [featureNames.HOME]: false,
+  [featureNames.PRIVATE_BAR]: false,
+  [featureNames.PRIVATE_BAZ]: false,
+  [featureNames.PRIVATE_HOME]: false,
   set: featureFlags => {
     featureFlags.forEach(flag => {
       flags[flag.key] = flag.enabled
@@ -19,9 +14,9 @@ const flags = {
   }
 }
 
-const proxy = new Proxy(flags, {
+const features = new Proxy(flags, {
   get: (target, property) => target[property],
   set: () => null // prevent property reassign
 })
 
-export default proxy
+export default features

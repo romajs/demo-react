@@ -6,12 +6,12 @@
     {
       "id": 1,
       "key": "bar",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": 2,
       "key": "baz",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": 3,
@@ -21,12 +21,12 @@
     {
       "id": 4,
       "key": "privateBar",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": 5,
       "key": "privateBaz",
-      "enabled": false
+      "enabled": true
     },
     {
       "id": 6,

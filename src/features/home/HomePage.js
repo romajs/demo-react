@@ -8,6 +8,3 @@ export const HomePage = () => (
     </div>
   </div>
 )
-
-HomePage.propTypes = {
-}

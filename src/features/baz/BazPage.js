@@ -8,6 +8,3 @@ export const BazPage = () => (
     </div>
   </div>
 )
-
-BazPage.propTypes = {
-}

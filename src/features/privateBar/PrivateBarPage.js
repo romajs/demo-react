@@ -8,6 +8,3 @@ export const PrivateBarPage = () => (
     </div>
   </div>
 )
-
-PrivateBarPage.propTypes = {
-}

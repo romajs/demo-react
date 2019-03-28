@@ -9,6 +9,7 @@ import { BazPage } from '../baz/BazPage'
 import { HomePage } from '../home/HomePage'
 import { LoginPageContainer } from '../auth/LoginPageContainer'
 import { LogoutPageContainer } from '../auth/LogoutPageContainer'
+import { NotFoundPage } from './page/NotFoundPage'
 import { PageContainer } from './page/PageContainer'
 import { PrivateBarPage } from '../privateBar/PrivateBarPage'
 import { PrivateBazPage } from '../privateBaz/PrivateBazPage'
@@ -45,6 +46,7 @@ export const App = ({ history, isAuthenticated }) => (
           component={PrivateHomePage}
           isAuthenticated={isAuthenticated}
         />}
+        <Route component={NotFoundPage} />
       </Switch>
     </PageContainer>
   </ConnectedRouter>

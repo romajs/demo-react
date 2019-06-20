@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import { colors } from './colors'
+import styled from 'styled-components';
+import { colors } from './colors';
 
 export const FullOverlay = styled.div`
   background-color: ${colors.whisper};
@@ -10,4 +10,4 @@ export const FullOverlay = styled.div`
   top: 0;
   width: 100%;
   z-index: 2000;
-`
+`;

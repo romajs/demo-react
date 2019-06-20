@@ -1,11 +1,11 @@
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 
-import { toggleSidebar } from '../sidebar/toggleSidebar'
-import { fromUrl } from '../../../pages'
-import { Page } from './Page'
+import { toggleSidebar } from '../sidebar/toggleSidebar';
+import { fromUrl } from '../../../pages';
+import { Page } from './Page';
 
 export const _PageContainer = ({
   children,
@@ -13,7 +13,7 @@ export const _PageContainer = ({
   location,
   pageLoading,
   sidebarOpen,
-  toggleSidebar
+  toggleSidebar,
 }) => (
   <Page
     isAuthenticated={isAuthenticated}
@@ -25,7 +25,7 @@ export const _PageContainer = ({
   >
     {children}
   </Page>
-)
+);
 
 _PageContainer.propTypes = {
   children: PropTypes.node.isRequired,
@@ -33,21 +33,21 @@ _PageContainer.propTypes = {
   location: ReactRouterPropTypes.location.isRequired,
   pageLoading: PropTypes.bool.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
-  toggleSidebar: PropTypes.func.isRequired
-}
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
   location: state.router.location,
   pageLoading: state.application.pageLoading,
-  sidebarOpen: state.application.sidebarOpen
-})
+  sidebarOpen: state.application.sidebarOpen,
+});
 
 const mapDispatchToProps = ({
-  toggleSidebar
-})
+  toggleSidebar,
+});
 
 export const PageContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_PageContainer)
+)(_PageContainer);

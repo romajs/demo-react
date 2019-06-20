@@ -1,22 +1,22 @@
-import { ConnectedRouter } from 'connected-react-router'
-import { Redirect, Route, Switch } from 'react-router-dom'
-import PropTypes from 'prop-types'
-import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
+import { ConnectedRouter } from 'connected-react-router';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 
-import { BarPage } from '../bar/BarPage'
-import { BazPage } from '../baz/BazPage'
-import { HomePage } from '../home/HomePage'
-import { LoginPageContainer } from '../auth/LoginPageContainer'
-import { LogoutPageContainer } from '../auth/LogoutPageContainer'
-import { NotFoundPage } from './page/NotFoundPage'
-import { PageContainer } from './page/PageContainer'
-import { PrivateBarPage } from '../privateBar/PrivateBarPage'
-import { PrivateBazPage } from '../privateBaz/PrivateBazPage'
-import { PrivateHomePage } from '../privateHome/PrivateHomePage'
-import { PrivateRoute } from '../auth/PrivateRoute'
-import * as pages from '../../pages'
-import features from './features'
+import { BarPage } from '../bar/BarPage';
+import { BazPage } from '../baz/BazPage';
+import { HomePage } from '../home/HomePage';
+import { LoginPageContainer } from '../auth/LoginPageContainer';
+import { LogoutPageContainer } from '../auth/LogoutPageContainer';
+import { NotFoundPage } from './page/NotFoundPage';
+import { PageContainer } from './page/PageContainer';
+import { PrivateBarPage } from '../privateBar/PrivateBarPage';
+import { PrivateBazPage } from '../privateBaz/PrivateBazPage';
+import { PrivateHomePage } from '../privateHome/PrivateHomePage';
+import { PrivateRoute } from '../auth/PrivateRoute';
+import * as pages from '../../pages';
+import features from './features';
 
 export const App = ({ history, isAuthenticated }) => (
   <ConnectedRouter history={history}>
@@ -50,9 +50,9 @@ export const App = ({ history, isAuthenticated }) => (
       </Switch>
     </PageContainer>
   </ConnectedRouter>
-)
+);
 
 App.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired
-}
+  isAuthenticated: PropTypes.bool.isRequired,
+};

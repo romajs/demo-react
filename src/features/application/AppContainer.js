@@ -1,23 +1,23 @@
-import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
-import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 
-import { App } from './App'
-import { FullLoading } from '../misc/FullLoading/FullLoading'
-import { loadApplication } from './loadApplication'
+import { App } from './App';
+import { FullLoading } from '../misc/FullLoading/FullLoading';
+import { loadApplication } from './loadApplication';
 
 class _AppContainer extends React.Component {
   componentDidMount () {
-    this.props.loadApplication()
+    this.props.loadApplication();
   }
 
   render () {
     const {
       history,
       isAuthenticated,
-      windowLoading
-    } = this.props
+      windowLoading,
+    } = this.props;
     return (
       <React.Fragment>
         <FullLoading loading={windowLoading} />
@@ -29,7 +29,7 @@ class _AppContainer extends React.Component {
           />
         )}
       </React.Fragment>
-    )
+    );
   }
 }
 
@@ -37,19 +37,19 @@ _AppContainer.propTypes = {
   history: ReactRouterPropTypes.history.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   loadApplication: PropTypes.func.isRequired,
-  windowLoading: PropTypes.bool.isRequired
-}
+  windowLoading: PropTypes.bool.isRequired,
+};
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
-  windowLoading: state.application.windowLoading
-})
+  windowLoading: state.application.windowLoading,
+});
 
 const mapDispatchToProps = ({
-  loadApplication
-})
+  loadApplication,
+});
 
 export const AppContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(_AppContainer)
+)(_AppContainer);

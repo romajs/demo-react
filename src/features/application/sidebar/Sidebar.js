@@ -1,21 +1,21 @@
-import { withStyles } from '@material-ui/core/styles'
-import Divider from '@material-ui/core/Divider'
-import Drawer from '@material-ui/core/Drawer'
-import features from '../features'
-import List from '@material-ui/core/List'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { withStyles } from '@material-ui/core/styles';
+import Divider from '@material-ui/core/Divider';
+import Drawer from '@material-ui/core/Drawer';
+import features from '../features';
+import List from '@material-ui/core/List';
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import * as SidebarItems from './SidebarItems'
+import * as SidebarItems from './SidebarItems';
 
 const styles = {
   list: {
-    width: 250
+    width: 250,
   },
   fullList: {
-    width: 'auto'
-  }
-}
+    width: 'auto',
+  },
+};
 
 export const _Sidebar = ({ classes, isAuthenticated, open, toggleSidebar }) => (
   <Drawer open={open} onClose={() => toggleSidebar(false)}>
@@ -40,13 +40,13 @@ export const _Sidebar = ({ classes, isAuthenticated, open, toggleSidebar }) => (
       </div>
     </div>
   </Drawer>
-)
+);
 
 _Sidebar.propTypes = {
   classes: PropTypes.object.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   open: PropTypes.bool.isRequired,
-  toggleSidebar: PropTypes.func.isRequired
-}
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
-export const Sidebar = withStyles(styles)(_Sidebar)
+export const Sidebar = withStyles(styles)(_Sidebar);

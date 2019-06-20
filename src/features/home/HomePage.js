@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const HomePage = () => (
   <div style={{ textAlign: 'center' }}>
@@ -7,4 +7,4 @@ export const HomePage = () => (
       Welcome!
     </div>
   </div>
-)
+);

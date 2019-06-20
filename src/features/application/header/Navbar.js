@@ -1,30 +1,30 @@
-import { withRouter } from 'react-router-dom'
-import { withStyles } from '@material-ui/core/styles'
-import AppBar from '@material-ui/core/AppBar'
-import AccountCircleIcon from '@material-ui/icons/AccountCircle'
-import Button from '@material-ui/core/Button'
-import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
-import PropTypes from 'prop-types'
-import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
-import Toolbar from '@material-ui/core/Toolbar'
-import Typography from '@material-ui/core/Typography'
+import { withRouter } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import PropTypes from 'prop-types';
+import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 
-import { LOGIN } from '../../../pages'
+import { LOGIN } from '../../../pages';
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   grow: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   menuButton: {
     marginLeft: -12,
-    marginRight: 20
-  }
-}
+    marginRight: 20,
+  },
+};
 
 const _Navbar = ({ classes, history, isAuthenticated, title, toggleSidebar }) => (
   <div className={classes.root}>
@@ -49,18 +49,18 @@ const _Navbar = ({ classes, history, isAuthenticated, title, toggleSidebar }) =>
       </Toolbar>
     </AppBar>
   </div>
-)
+);
 
 _Navbar.propTypes = {
   classes: PropTypes.object.isRequired,
   history: ReactRouterPropTypes.history.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   title: PropTypes.string,
-  toggleSidebar: PropTypes.func.isRequired
-}
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
 _Navbar.defaultProps = {
-  title: ''
-}
+  title: '',
+};
 
-export const Navbar = withRouter(withStyles(styles)(_Navbar))
+export const Navbar = withRouter(withStyles(styles)(_Navbar));

@@ -1,9 +1,9 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const version = 'v1'
+const version = 'v1';
 
 export const configurationService = {
   find: () => axios
     .get(`/api/${version}/configurations`)
-    .then(({ data }) => data)
-}
+    .then(({ data }) => data),
+};

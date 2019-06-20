@@ -1,12 +1,12 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const version = 'v1'
+const version = 'v1';
 
 export const authService = {
   authenticate: (username, password) => axios
     .post(`/api/${version}/auth`, {
       username,
-      password
+      password,
     })
-    .then(({ data }) => data)
-}
+    .then(({ data }) => data),
+};

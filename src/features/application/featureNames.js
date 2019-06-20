@@ -4,7 +4,7 @@ const featureNames = Object.freeze({
   HOME: 'home',
   PRIVATE_BAR: 'privateBar',
   PRIVATE_BAZ: 'privateBaz',
-  PRIVATE_HOME: 'privateHome'
-})
+  PRIVATE_HOME: 'privateHome',
+});
 
-export default featureNames
+export default featureNames;

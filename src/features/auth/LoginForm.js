@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Button from '@material-ui/core/Button'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Button from '@material-ui/core/Button';
 
 export const LoginForm = ({ isAuthenticated, login }) => (
   <div style={{ textAlign: 'center' }}>
@@ -10,9 +10,9 @@ export const LoginForm = ({ isAuthenticated, login }) => (
       <Button color='inherit' onClick={login}>Login</Button>
     </div>
   </div>
-)
+);
 
 LoginForm.propTypes = {
   isAuthenticated: PropTypes.bool.isRequired,
-  login: PropTypes.func.isRequired
-}
+  login: PropTypes.func.isRequired,
+};

@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactRouterPropTypes from 'react-router-prop-types'
+import React from 'react';
+import ReactRouterPropTypes from 'react-router-prop-types';
 
 export const NotFoundPage = ({ location }) => (
   <div style={{ textAlign: 'center' }}>
@@ -8,8 +8,8 @@ export const NotFoundPage = ({ location }) => (
       <p>No match found for: <strong>{location.pathname}</strong></p>
     </div>
   </div>
-)
+);
 
 NotFoundPage.propTypes = {
-  location: ReactRouterPropTypes.location.isRequired
-}
+  location: ReactRouterPropTypes.location.isRequired,
+};

@@ -1,8 +1,8 @@
-import * as materialIcons from '@material-ui/icons'
-import * as pages from '../../../pages'
-import React from 'react'
+import * as materialIcons from '@material-ui/icons';
+import * as pages from '../../../pages';
+import React from 'react';
 
-import SidebarItem from './SidebarItem'
+import SidebarItem from './SidebarItem';
 
 export const Bar = () => (
   <SidebarItem
@@ -10,7 +10,7 @@ export const Bar = () => (
     text={pages.BAR.title}
     url={pages.BAR.url}
   />
-)
+);
 
 export const Baz = () => (
   <SidebarItem
@@ -18,7 +18,7 @@ export const Baz = () => (
     text={pages.BAZ.title}
     url={pages.BAZ.url}
   />
-)
+);
 
 export const Home = () => (
   <SidebarItem
@@ -26,7 +26,7 @@ export const Home = () => (
     text={pages.HOME.title}
     url={pages.HOME.url}
   />
-)
+);
 
 export const PrivateBar = () => (
   <SidebarItem
@@ -34,7 +34,7 @@ export const PrivateBar = () => (
     text={pages.PRIVATE_BAR.title}
     url={pages.PRIVATE_BAR.url}
   />
-)
+);
 
 export const PrivateBaz = () => (
   <SidebarItem
@@ -42,7 +42,7 @@ export const PrivateBaz = () => (
     text={pages.PRIVATE_BAZ.title}
     url={pages.PRIVATE_BAZ.url}
   />
-)
+);
 
 export const PrivateHome = () => (
   <SidebarItem
@@ -50,7 +50,7 @@ export const PrivateHome = () => (
     text={pages.PRIVATE_HOME.title}
     url={pages.PRIVATE_HOME.url}
   />
-)
+);
 
 export const Login = () => (
   <SidebarItem
@@ -58,7 +58,7 @@ export const Login = () => (
     text={pages.LOGIN.title}
     url={pages.LOGIN.url}
   />
-)
+);
 
 export const Logout = () => (
   <SidebarItem
@@ -66,4 +66,4 @@ export const Logout = () => (
     text={pages.LOGOUT.title}
     url={pages.LOGOUT.url}
   />
-)
+);

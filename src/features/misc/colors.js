@@ -1,3 +1,3 @@
 export const colors = {
-  whisper: '#eeeeee'
-}
+  whisper: '#eeeeee',
+};

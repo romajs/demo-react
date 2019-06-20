@@ -1,4 +1,4 @@
-import featureNames from './featureNames'
+import featureNames from './featureNames';
 
 const flags = {
   [featureNames.BAR]: false,
@@ -9,14 +9,14 @@ const flags = {
   [featureNames.PRIVATE_HOME]: false,
   set: featureFlags => {
     featureFlags.forEach(flag => {
-      flags[flag.key] = flag.enabled
-    })
-  }
-}
+      flags[flag.key] = flag.enabled;
+    });
+  },
+};
 
 const features = new Proxy(flags, {
   get: (target, property) => target[property],
-  set: () => null // prevent property reassign
-})
+  set: () => null, // prevent property reassign
+});
 
-export default features
+export default features;

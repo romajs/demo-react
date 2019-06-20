@@ -1,15 +1,45 @@
 {
   "extends": [
-      "standard",
-      "standard-react"
+    "standard",
+    "standard-react"
   ],
   "env": {
-      "es6": true,
-      "browser": true,
-      "jest": true
+    "es6": true,
+    "browser": true,
+    "jest": true
   },
   "parser": "babel-eslint",
   "rules": {
-      "no-console": "warn"
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ],
+    "no-console": "warn",
+    "no-unused-vars": "warn",
+    "react/prop-types": "warn",
+    "semi": [
+      "error",
+      "always"
+    ],
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": false,
+        "ignoreMemberSort": false,
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "multiple",
+          "single"
+        ]
+      }
+    ]
   }
 }

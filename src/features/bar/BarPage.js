@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const BarPage = () => (
   <div style={{ textAlign: 'center' }}>
@@ -7,4 +7,4 @@ export const BarPage = () => (
       <p>{Math.random()}</p>
     </div>
   </div>
-)
+);

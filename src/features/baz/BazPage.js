@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export const BazPage = () => (
   <div style={{ textAlign: 'center' }}>
@@ -7,4 +7,4 @@ export const BazPage = () => (
       {Math.random()}
     </div>
   </div>
-)
+);

@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types'
-import React from 'react'
+import PropTypes from 'prop-types';
+import React from 'react';
 
-import { Header } from '../header/Header'
-import { LinearLoading } from '../../misc/loading/LinearLoading'
-import { Navbar } from '../header/Navbar'
-import { Sidebar } from '../sidebar/Sidebar'
+import { Header } from '../header/Header';
+import { LinearLoading } from '../../misc/loading/LinearLoading';
+import { Navbar } from '../header/Navbar';
+import { Sidebar } from '../sidebar/Sidebar';
 
 export const Page = ({
   children,
@@ -12,7 +12,7 @@ export const Page = ({
   page,
   pageLoading,
   sidebarOpen,
-  toggleSidebar
+  toggleSidebar,
 }) => (
   <React.Fragment>
     <Header>
@@ -34,7 +34,7 @@ export const Page = ({
     />
     {children}
   </React.Fragment>
-)
+);
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,
@@ -42,13 +42,13 @@ Page.propTypes = {
   page: PropTypes.shape({
     title: PropTypes.string,
     showNavbar: PropTypes.bool,
-    showSidebar: PropTypes.bool
+    showSidebar: PropTypes.bool,
   }),
   pageLoading: PropTypes.bool.isRequired,
   sidebarOpen: PropTypes.bool.isRequired,
-  toggleSidebar: PropTypes.func.isRequired
-}
+  toggleSidebar: PropTypes.func.isRequired,
+};
 
 Page.defaultProps = {
-  page: {}
-}
+  page: {},
+};

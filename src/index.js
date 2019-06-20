@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { AppContainer } from './features/application/AppContainer';
+import { AppContainer } from './application/AppContainer';
 import configureStore from './configureStore';
 import registerServiceWorker from './registerServiceWorker';
 

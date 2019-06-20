@@ -11,7 +11,7 @@ import ReactRouterPropTypes from 'react-router-prop-types';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-import { LOGIN } from '../../../pages';
+import { LOGIN } from '../../pages';
 
 const styles = {
   root: {

@@ -4,7 +4,7 @@ import React from 'react';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import { toggleSidebar } from '../sidebar/toggleSidebar';
-import { fromUrl } from '../../../pages';
+import { fromUrl } from '../../pages';
 import { Page } from './Page';
 
 export const _PageContainer = ({

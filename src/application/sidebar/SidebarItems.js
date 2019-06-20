@@ -1,5 +1,5 @@
 import * as materialIcons from '@material-ui/icons';
-import * as pages from '../../../pages';
+import * as pages from '../../pages';
 import React from 'react';
 
 import SidebarItem from './SidebarItem';

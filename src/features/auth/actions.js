@@ -1,5 +1,5 @@
 import { createActions } from 'redux-actions';
-import { setPageLoading } from '../application/actions';
+import { setPageLoading } from '../../application/actions';
 
 export const {
   setIsAuthenticated,

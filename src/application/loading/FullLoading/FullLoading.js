@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { FullOverlay } from '../FullOverlay';
-import { CircularLoading } from '../loading/CircularLoading';
+import { CircularLoading } from '../CircularLoading';
 
 import './FullLoading.css';
 

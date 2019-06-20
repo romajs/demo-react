@@ -4,18 +4,18 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
-import { BarPage } from '../bar/BarPage';
-import { BazPage } from '../baz/BazPage';
-import { HomePage } from '../home/HomePage';
-import { LoginPageContainer } from '../auth/LoginPageContainer';
-import { LogoutPageContainer } from '../auth/LogoutPageContainer';
+import { BarPage } from '../features/bar/BarPage';
+import { BazPage } from '../features/baz/BazPage';
+import { HomePage } from '../features/home/HomePage';
+import { LoginPageContainer } from '../features/auth/LoginPageContainer';
+import { LogoutPageContainer } from '../features/auth/LogoutPageContainer';
 import { NotFoundPage } from './page/NotFoundPage';
 import { PageContainer } from './page/PageContainer';
-import { PrivateBarPage } from '../privateBar/PrivateBarPage';
-import { PrivateBazPage } from '../privateBaz/PrivateBazPage';
-import { PrivateHomePage } from '../privateHome/PrivateHomePage';
-import { PrivateRoute } from '../auth/PrivateRoute';
-import * as pages from '../../pages';
+import { PrivateBarPage } from '../features/privateBar/PrivateBarPage';
+import { PrivateBazPage } from '../features/privateBaz/PrivateBazPage';
+import { PrivateHomePage } from '../features/privateHome/PrivateHomePage';
+import { PrivateRoute } from '../features/auth/PrivateRoute';
+import * as pages from '../pages';
 import features from './features';
 
 export const App = ({ history, isAuthenticated }) => (

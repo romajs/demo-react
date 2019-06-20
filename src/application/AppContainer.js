@@ -4,7 +4,7 @@ import React from 'react';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import { App } from './App';
-import { FullLoading } from '../misc/FullLoading/FullLoading';
+import { FullLoading } from './loading/FullLoading/FullLoading';
 import { loadApplication } from './loadApplication';
 
 class _AppContainer extends React.Component {

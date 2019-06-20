@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
-import application from './features/application/reducer';
+import application from './application/reducer';
 import auth from './features/auth/reducer';
 
 export default history => combineReducers({

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { Header } from '../header/Header';
-import { LinearLoading } from '../../misc/loading/LinearLoading';
+import { LinearLoading } from '../loading/LinearLoading';
 import { Navbar } from '../header/Navbar';
 import { Sidebar } from '../sidebar/Sidebar';
 

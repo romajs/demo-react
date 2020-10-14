@@ -1,30 +1,21 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import detector from "i18next-browser-languagedetector";
-
-import translationEN from './locales/en/translation.json';
-import translationPT_BR from './locales/pt-br/translation.json';
-
-const resources = {
-  en: {
-    translation: translationEN
-  },
-  pt: {
-    translation: translationPT_BR
-  }
-};
+import i18nextHttpBackend from 'i18next-http-backend';
 
 i18n
+  .use(i18nextHttpBackend)
   .use(detector)
   .use(initReactI18next)
   .init({
-    resources,
-    lng: "pt",
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json'
+    },
     fallbackLng: "en",
     keySeparator: true,
     interpolation: {
       escapeValue: false
-    }
+    },
   });
 
 export default i18n;

@@ -3,12 +3,12 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const HomePage = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('hello');
   return (
     <div style={{ textAlign: 'center' }}>
-      <h1>{t('features.hello.title')}</h1>
+      <h1>{t('title')}</h1>
       <div>
-        {t('features.hello.content')}
+        {t('content.text')}
       </div>
     </div>
   )

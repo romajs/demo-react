@@ -14,7 +14,7 @@ export const Page = ({
   sidebarOpen,
   toggleSidebar,
 }) => (
-  <React.Fragment>
+  <>
     <Header>
       <div style={{ position: 'absolute', top: '0', width: '100%' }}>
         <LinearLoading loading={pageLoading} />
@@ -33,7 +33,7 @@ export const Page = ({
       toggleSidebar={toggleSidebar}
     />
     {children}
-  </React.Fragment>
+  </>
 );
 
 Page.propTypes = {

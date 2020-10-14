@@ -6,12 +6,14 @@ import React from 'react';
 import { LOGIN } from '../../pages';
 
 export const _PrivateRoute = ({ component: Component, isAuthenticated, ...props }) => (
-  <Route render={renderProps => isAuthenticated
-    ? (
-      <Component {...renderProps} />
-    ) : (
-      <Redirect to={LOGIN.url} />
-    )} {...props} />
+  <Route
+    render={renderProps => isAuthenticated
+      ? (
+        <Component {...renderProps} />
+      ) : (
+        <Redirect to={LOGIN.url} />
+      )} {...props}
+  />
 );
 
 _PrivateRoute.propTypes = {

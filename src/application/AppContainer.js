@@ -19,7 +19,7 @@ class _AppContainer extends React.Component {
       windowLoading,
     } = this.props;
     return (
-      <React.Fragment>
+      <>
         <FullLoading loading={windowLoading} />
         {!windowLoading && (
           <App
@@ -28,7 +28,7 @@ class _AppContainer extends React.Component {
             loading={windowLoading}
           />
         )}
-      </React.Fragment>
+      </>
     );
   }
 }

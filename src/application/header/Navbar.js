@@ -41,7 +41,7 @@ const _Navbar = ({ classes, history, isAuthenticated, title, toggleSidebar }) =>
         <Typography variant='h6' color='inherit' className={classes.grow}>
           {title}
         </Typography>
-        { isAuthenticated ? (
+        {isAuthenticated ? (
           <AccountCircleIcon />
         ) : (
           <Button color='inherit' onClick={() => history.push(LOGIN.url)}>Login</Button>

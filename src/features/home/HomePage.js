@@ -1,10 +1,15 @@
 import React from 'react';
 
-export const HomePage = () => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>Home</h1>
-    <div>
-      Welcome!
+import { useTranslation } from 'react-i18next';
+
+export const HomePage = () => {
+  const { t } = useTranslation();
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <h1>{t('features.hello.title')}</h1>
+      <div>
+        {t('features.hello.content')}
+      </div>
     </div>
-  </div>
-);
+  )
+}

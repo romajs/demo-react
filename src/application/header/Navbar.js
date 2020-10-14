@@ -12,6 +12,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
 import { LOGIN } from '../../pages';
+import { LangSwitcher } from '../../features/i18n/LangSwitcher';
 
 const styles = {
   root: {
@@ -41,6 +42,7 @@ const _Navbar = ({ classes, history, isAuthenticated, title, toggleSidebar }) =>
         <Typography variant='h6' color='inherit' className={classes.grow}>
           {title}
         </Typography>
+        <LangSwitcher />
         {isAuthenticated ? (
           <AccountCircleIcon />
         ) : (

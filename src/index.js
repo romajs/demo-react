@@ -7,6 +7,7 @@ import { AppContainer } from './application/AppContainer';
 import configureStore from './configureStore';
 import registerServiceWorker from './registerServiceWorker';
 
+import './i18n'
 import './index.css';
 
 const history = createBrowserHistory();
